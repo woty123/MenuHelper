@@ -49,6 +49,7 @@ public class FloatView extends ImageView {
         super(context);
         mWindowManager = ((MyApplication) context).getWindowManager();
         this.mStatusBarHeight = Math.max(0, statusBarHeight);
+        // this.mStatusBarHeight = 5;
         this.mScreenWidth = context.getResources().getDisplayMetrics().widthPixels;
         this.mScreenHeight = context.getResources().getDisplayMetrics().heightPixels;
     }
@@ -111,6 +112,8 @@ public class FloatView extends ImageView {
                 // mIsMove = true;
                 mMoveTimes++;
 
+//                mMoveX = mRawX - 65 - 30;
+//                mMoveY = mRawY - 65 - 30;
                 mMoveX = mRawX - 65;
                 mMoveY = mRawY - 65;
                 if (mRawX < 65) {
@@ -123,6 +126,7 @@ public class FloatView extends ImageView {
                     mMoveY = mStatusBarHeight;
                 }
                 if (mRawY > mScreenHeight - 65) {
+                    // mMoveY = mScreenHeight - 129 - 30;
                     mMoveY = mScreenHeight - 129;
                 }
 
